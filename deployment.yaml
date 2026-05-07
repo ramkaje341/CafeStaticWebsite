@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cafe-website-deployment
+  labels:
+    app: cafe-website
+spec:
+  replicas: 2 # You can adjust the number of instances
+  selector:
+    matchLabels:
+      app: cafe-website
+  template:
+    metadata:
+      labels:
+        app: cafe-website
+    spec:
+      containers:
+      - name: cafe-website
+        # Replace this with your actual image repository and tag after building and pushing
+        image: your-docker-registry/cafe-website:latest 
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "250m"
+            memory: "256Mi"
