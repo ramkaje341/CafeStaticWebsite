@@ -17,7 +17,7 @@ spec:
       containers:
       - name: cafe-website
         # Replace this with your actual image repository and tag after building and pushing
-        image: ramkaje341/cafe-website:latest 
+        image: ramkaje341/mycafe:latest 
         ports:
         - containerPort: 80
         resources:
